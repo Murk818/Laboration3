@@ -364,5 +364,17 @@ public class ReversiModel extends GameModel {
 		}
 		setGameboardState(this.cursorPos, cursoredTile);
 	}
+	public GameTile fixColor(Position pos){
+		GameTile t;
+		PieceColor pc = board[pos.getX()][pos.getY()];
+		switch(pc){
+		case BLACK: t = blackTile;
+			break;
+		case WHITE: t = whiteTile;
+			break;
+			default: t = blankTile;
+				
+		}
+	}
 
 }
